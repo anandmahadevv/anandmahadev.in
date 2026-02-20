@@ -19,3 +19,6 @@
 ## Update (2026-03-06T09:47:46)
 - docs: clarify setup instructions in README
 
+## Update (2026-02-20T09:47:46)
+- perf: reduce memory footprint in background workers
+
