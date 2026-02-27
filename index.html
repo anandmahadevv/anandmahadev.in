@@ -4,8 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anand — Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Anand, Full Stack Web Developer & AI Systems Builder.">
+  <title>Anand Mahadev | AI Systems Architect & Full Stack Developer</title>
+  <meta name="description"
+    content="AI Systems Architect & Full Stack Developer shipping AI-powered products and full-stack systems. Currently building Thinknode AI.">
+  <meta name="keywords"
+    content="AI Developer, Full Stack Developer, Thinknode AI, CardioNerve, Anand Mahadev, React, Node.js, Python, ML">
+  <meta property="og:title" content="Anand Mahadev | AI Systems Architect">
+  <meta property="og:description" content="Building the web, one AI system at a time.">
+  <meta property="og:url" content="https://anandmahadev.in">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -265,12 +272,13 @@
       display: inline-block;
       font-family: var(--font-mono);
       font-size: .68rem;
-      color: var(--green);
-      border: 1px solid var(--border);
-      padding: .38rem 1rem;
+      color: #6a9955;
+      /* Comment color */
+      padding: 0;
       letter-spacing: 2px;
-      text-transform: uppercase;
       margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-style: italic;
       animation: reveal-up 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
 
@@ -311,6 +319,56 @@
       gap: 1rem;
       animation: reveal-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
     }
+
+    .h-loc {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--gray);
+      opacity: 0.8;
+      animation: reveal-up 1s cubic-bezier(0.23, 1, 0.32, 1) 0.05s forwards;
+    }
+
+    .h-loc .divider {
+      color: var(--border);
+    }
+
+    .h-loc .status {
+      color: var(--green);
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .h-loc .status::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: status-blink 1.5s infinite;
+    }
+
+    @keyframes status-blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+
 
     @keyframes reveal-up {
       from {
@@ -404,10 +462,12 @@
 
     .term-box {
       width: 100%;
-      max-width: 460px;
-      border: 1px solid var(--green);
-      background: rgba(57, 255, 20, .02);
-      box-shadow: 0 0 50px rgba(57, 255, 20, .15), inset 0 0 40px rgba(57, 255, 20, .015);
+      max-width: 480px;
+      border: 1px solid var(--border);
+      background: #070707;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(57, 255, 20, 0.05);
       position: relative;
     }
 
@@ -442,12 +502,12 @@
     }
 
     .term-body {
-      padding: 1.8rem;
+      padding: 1.5rem;
       font-family: var(--font-mono);
-      font-size: .8rem;
-      line-height: 2;
+      font-size: 0.75rem;
+      line-height: 1.6;
       color: var(--gray);
-      min-height: 280px;
+      min-height: 320px;
     }
 
     .t-line {
@@ -532,10 +592,17 @@
     .sec-lbl {
       font-family: var(--font-mono);
       font-size: .68rem;
-      color: var(--green);
-      letter-spacing: 4px;
-      text-transform: uppercase;
+      color: #6a9955;
+      /* Comment color */
+      letter-spacing: 2px;
       margin-bottom: .5rem;
+      font-style: italic;
+    }
+
+    .sec-lbl span.num-label {
+      color: #b5cea8;
+      /* Number color */
+      font-style: normal;
     }
 
     .sec-title {
@@ -599,8 +666,53 @@
       font-size: .62rem;
       color: rgba(57, 255, 20, .85);
       letter-spacing: 3px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .proj-meta-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .proj-problem-solution {
+      margin-bottom: 1rem;
+      border-left: 2px solid var(--green);
+      padding-left: 1rem;
+      background: rgba(57, 255, 20, 0.03);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .proj-achievements h4 {
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      margin: 1.5rem 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .proj-achievements ul {
+      color: var(--gray);
+      font-size: 0.85rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .proj-achievements li {
+      margin-bottom: 0.4rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .proj-achievements li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--green);
     }
 
     .proj-title {
@@ -817,7 +929,8 @@
     .j-year {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--green);
+      color: #b5cea8;
+      /* Number color */
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
@@ -826,10 +939,13 @@
 
     .j-branch {
       font-size: 0.6rem;
-      background: rgba(57, 255, 20, 0.1);
+      background: #1a1a1a;
+      color: #4ec9b0;
+      /* Type/Class color */
       padding: 2px 8px;
-      border-radius: 10px;
+      border-radius: 4px;
       letter-spacing: 1px;
+      border: 1px solid rgba(78, 201, 176, 0.2);
     }
 
     .j-role {
@@ -1263,8 +1379,59 @@
     /* ── ABOUT ── */
     /* ── CODE PLAYGROUND ── */
     .about-playground {
-      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1250px;
       margin: 0 auto;
+    }
+
+    .headshot-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 0.85;
+      border: 1px solid var(--border);
+      background: rgba(57, 255, 20, 0.02);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .headshot-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+      animation: hpulse 4s ease-in-out infinite;
+    }
+
+    .headshot-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      color: var(--border);
+      text-align: center;
+    }
+
+    .headshot-placeholder svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.3;
+    }
+
+    @media (max-width: 900px) {
+      .about-playground {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        order: -1;
+        max-width: 320px;
+        margin: 0 auto 2.5rem;
+      }
     }
 
     .editor-window {
@@ -1332,12 +1499,12 @@
     }
 
     .editor-body {
-      padding: 30px;
+      padding: 40px;
       display: flex;
       gap: 25px;
       font-size: 0.95rem;
       line-height: 1.7;
-      min-height: 400px;
+      min-height: 520px;
     }
 
     .line-numbers {
@@ -2038,11 +2205,16 @@
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-left">
-      <span class="h-badge">// Full Stack Developer &amp; AI Builder</span>
+      <span class="h-badge">// Full Stack Developer & AI Systems Builder</span>
       <h1 class="h-name">AN<em>AND</em><br><em>.</em></h1>
+      <div class="h-loc reveal-up">
+        <span>Mangaluru, India 🇮🇳</span>
+        <span class="divider">|</span>
+        <span class="status">Available for: Full-time &amp; Contract</span>
+      </div>
       <p class="h-sub">Building the web, one system at a time.</p>
-      <p class="h-desc">I craft scalable, high-performance web applications and AI-driven systems with clean
-        architecture and modern tech.</p>
+      <p class="h-desc">I ship AI-powered products &amp; full-stack systems that solve real problems. Currently building
+        Thinknode AI.</p>
       <div class="h-btns">
         <a href="#projects" class="btn-g mag">See My Work</a>
         <a href="#contact" class="btn-o mag">Get in Touch</a>
@@ -2064,132 +2236,53 @@
   <!-- PROJECTS -->
   <section id="projects" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 01 — Selected Work</p>
+      <p class="sec-lbl">// <span class="num-label">01</span> — Selected Work</p>
       <h2 class="sec-title">Projects</h2>
-      <p class="sec-sub">Things I've built — from idea to deployment.</p>
+      <p class="sec-sub">Things I've built — from idea to deployment. Focused on impact and scale.</p>
     </div>
 
     <div class="proj-grid">
 
+      <!-- CardioNerve - POSITION 01 -->
       <div class="proj-card reveal">
-        <div>
-          <div class="proj-num">PROJECT — 01</div>
-          <h3 class="proj-title">AgroNova</h3>
-          <p class="proj-desc">An AI-powered agricultural intelligence platform designed to optimize crop yield, monitor
-            soil health, and provide predictive insights for smart farming. Integrates real-time data analysis,
-            automation workflows, and AI-driven recommendations for sustainable and scalable agriculture solutions.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Python</span><span class="stack-tag">React</span>
-            <span class="stack-tag">Node.js</span><span class="stack-tag">MongoDB</span><span class="stack-tag">OpenAI
-              API</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://agronova.in" class="plink plink-live" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              Live Demo
-            </a>
-            <a href="https://github.com/anandmahadev/AgroNova.in" class="plink plink-gh" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <div class="proj-right"><span class="proj-idx">01</span></div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div>
-          <div class="proj-num">PROJECT — 02</div>
-          <h3 class="proj-title">DrugSecure</h3>
-          <p class="proj-desc">An AI-powered pharmaceutical verification and quality intelligence platform designed to
-            detect counterfeit and substandard medicines. Enables chemical composition validation, batch tracking, and
-            compliance monitoring through intelligent data analysis and secure verification workflows. Built to support
-            regulators, manufacturers, and healthcare providers with real-time authenticity checks and risk alerts.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">React</span><span class="stack-tag">Node.js</span>
-            <span class="stack-tag">REST APIs</span><span class="stack-tag">MongoDB</span><span class="stack-tag">AI/ML
-              Models</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://drugsecure.vercel.app" class="plink plink-live" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              Live Demo
-            </a>
-            <a href="https://github.com/anandmahadev/drug-secure" class="plink plink-gh" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <div class="proj-right"><span class="proj-idx">02</span></div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div>
-          <div class="proj-num">PROJECT — 03</div>
-          <h3 class="proj-title">HackBro</h3>
-          <p class="proj-desc">A competitive programming and hackathon collaboration platform designed to help
-            developers form teams, share problem statements, and build solutions efficiently. Features secure user
-            authentication, team management, real-time collaboration modules, and structured project submission
-            workflows. Built for scalability, performance, and seamless developer experience.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Node.js</span><span class="stack-tag">JWT</span>
-            <span class="stack-tag">MongoDB</span><span class="stack-tag">WebSockets</span><span
-              class="stack-tag">Express</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://hackbro.vercel.app" class="plink plink-live" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              Live Demo
-            </a>
-            <a href="https://github.com/anandmahadev/HACK-MATE" class="plink plink-gh" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <div class="proj-right"><span class="proj-idx">03</span></div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div>
-          <div class="proj-num">PROJECT — 04</div>
+        <div class="proj-info">
+          <div class="proj-num">PROJECT — 01 // HIGHEST IMPACT</div>
           <h3 class="proj-title">CardioNerve</h3>
-          <p class="proj-desc">An AI-powered cardiovascular risk assessment and monitoring platform designed to analyze
-            patient health data and generate early risk predictions. Features real-time data ingestion, validation
-            pipelines, predictive modeling, and an interactive analytics dashboard for actionable clinical insights.
-            Built for scalability, accuracy, and preventive healthcare decision support.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Python</span><span class="stack-tag">React</span>
-            <span class="stack-tag">FastAPI</span><span class="stack-tag">MongoDB</span><span class="stack-tag">AI/ML
-              Models</span>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="stack-tag">Building since Jan 2025</span>
+            <span class="stack-tag">Health-Tech</span>
+          </div>
+          <div class="proj-problem-solution"
+            style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
+              Delayed diagnosis in cardiovascular diseases leads to high mortality rates in remote areas.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Built an AI-powered
+              risk assessment platform that analyzes patient vitals in real-time using predictive modeling.</p>
+          </div>
+          <p class="proj-desc">As Project Lead, I orchestrated the development of this clinical-grade system. Features
+            real-time data ingestion, validation pipelines, and an interactive analytics dashboard for actionable
+            clinical insights.</p>
+
+          <div class="proj-achievements">
+            <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
+              Key Achievements:</h4>
+            <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Led a team of 4 engineers to deploy
+                v2 in 3 months.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Reduced risk prediction error by
+                18% using custom ML models.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Handled 1k+ concurrent data streams
+                in pilot testing.</li>
+            </ul>
+          </div>
+
+          <div class="proj-stack" style="margin-top: 1.5rem;">
+            <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">React</span><span class="stack-tag">MongoDB</span>
+            <span class="stack-tag">TensorFlow</span>
           </div>
           <div class="proj-links">
             <a href="https://cardionerve.vercel.app" class="plink plink-live" target="_blank">
@@ -2211,16 +2304,202 @@
             </a>
           </div>
         </div>
+        <div class="proj-right"><span class="proj-idx">01</span></div>
+      </div>
+
+      <!-- AgroNova - POSITION 02 -->
+      <div class="proj-card reveal">
+        <div class="proj-info">
+          <div class="proj-num">PROJECT — 02</div>
+          <h3 class="proj-title">AgroNova</h3>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="stack-tag">Built in 4 months</span>
+            <span class="stack-tag">Agri-Tech</span>
+          </div>
+          <div class="proj-problem-solution"
+            style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
+              Farmers lack real-time soil data, leading to fertilizer waste and sub-optimal yields.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Developed an AI
+              platform with IoT sensor integration for predictive soil health monitoring.</p>
+          </div>
+          <p class="proj-desc">AI-powered agricultural intelligence platform designed to optimize crop yield and provide
+            predictive insights for smart farming. Helped 50+ farmers improve yields by an average of 10%.</p>
+
+          <div class="proj-achievements">
+            <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
+              Impact Metrics:</h4>
+            <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> 50+ Active Farmers using the
+                platform.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> 10% Average Yield Increase reported
+                by users.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Response time &lt;400ms for
+                real-time sensor updates.</li>
+            </ul>
+          </div>
+
+          <div class="proj-stack" style="margin-top: 1.5rem;">
+            <span class="stack-tag">Python</span><span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span><span class="stack-tag">MongoDB</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://agronova.in" class="plink plink-live" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+            <a href="https://github.com/anandmahadev/AgroNova.in" class="plink plink-gh" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="proj-right"><span class="proj-idx">02</span></div>
+      </div>
+
+      <!-- DrugSecure - POSITION 03 -->
+      <div class="proj-card reveal">
+        <div class="proj-info">
+          <div class="proj-num">PROJECT — 03</div>
+          <h3 class="proj-title">DrugSecure</h3>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="stack-tag">Built in 2 months</span>
+            <span class="stack-tag">Pharma-Tech</span>
+          </div>
+          <div class="proj-problem-solution"
+            style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
+              Counterfeit drugs cause thousands of deaths annually due to lack of verification.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Built an AI
+              verification platform for chemical composition validation and batch tracking.</p>
+          </div>
+          <p class="proj-desc">Pharmaceutical verification platform designed to detect counterfeit and substandard
+            medicines. Enables batch tracking and compliance monitoring through intelligent data analysis.</p>
+
+          <div class="proj-achievements">
+            <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
+              Performance:</h4>
+            <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Successfully processed 100+ test
+                verifications.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> 92% Accuracy in prototype anomaly
+                detection.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Integrated with 3 mockup pharmacy
+                data sources.</li>
+            </ul>
+          </div>
+
+          <div class="proj-stack" style="margin-top: 1.5rem;">
+            <span class="stack-tag">React</span><span class="stack-tag">Node.js</span>
+            <span class="stack-tag">REST APIs</span><span class="stack-tag">MongoDB</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://drugsecure.vercel.app" class="plink plink-live" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+            <a href="https://github.com/anandmahadev/drug-secure" class="plink plink-gh" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="proj-right"><span class="proj-idx">03</span></div>
+      </div>
+
+      <!-- HackBro - POSITION 04 -->
+      <div class="proj-card reveal">
+        <div class="proj-info">
+          <div class="proj-num">PROJECT — 04</div>
+          <h3 class="proj-title">HackBro</h3>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="stack-tag">Built in 1.5 months</span>
+            <span class="stack-tag">Community</span>
+          </div>
+          <div class="proj-problem-solution"
+            style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
+              Early-year students struggle to navigate their first hackathons, lacking a clear roadmap from idea to
+              prototype.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Developed a
+              mentorship-driven resource platform providing guided roadmaps and execution toolkits.</p>
+          </div>
+          <p class="proj-desc">A resource-first platform designed to help 1st and 2nd-year students bridge the gap
+            between brainstorming an idea and executing a full hackathon build.</p>
+
+          <div class="proj-achievements">
+            <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
+              Key Stats:</h4>
+            <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Guided 30+ freshman teams through
+                their first hackathon lifecycle.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Curated 5+ comprehensive roadmap
+                modules for AI & Web domains.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Adopted as a recommended resource
+                for college tech orientation.</li>
+            </ul>
+          </div>
+
+          <div class="proj-stack" style="margin-top: 1.5rem;">
+            <span class="stack-tag">Node.js</span><span class="stack-tag">JWT</span>
+            <span class="stack-tag">MongoDB</span><span class="stack-tag">WebSockets</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://hackbro.vercel.app" class="plink plink-live" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+            <a href="https://github.com/anandmahadev/HACK-MATE" class="plink plink-gh" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
         <div class="proj-right"><span class="proj-idx">04</span></div>
       </div>
 
     </div>
   </section>
-
   <!-- EXPERIENCE -->
   <section id="experience" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 02 — Experience</p>
+      <p class="sec-lbl">// <span class="num-label">02</span> — Experience</p>
       <h2 class="sec-title">Journey</h2>
       <p class="sec-sub">Where I've been and what I've built along the way.</p>
     </div>
@@ -2232,18 +2511,18 @@
         <div class="j-side">
           <div class="j-card">
             <div class="j-year">
-              2025 — Present
+              Jan 2025 — Present
               <span class="j-branch">[main]</span>
             </div>
-            <div class="j-role">Project Lead</div>
-            <div class="j-comp">CardioNerve</div>
-            <p class="j-desc">Leading the development of an AI-driven cardiovascular risk assessment system.
-              Coordinating cross-functional teams, defining product roadmap, and overseeing end-to-end execution from
-              research to deployment. Ensuring scalable architecture, clinical data validation, and real-world
-              usability.</p>
+            <div class="j-role">Project Lead // Founding Member</div>
+            <div class="j-comp"><a href="https://cardionerve.vercel.app" target="_blank"
+                style="color:var(--green); text-decoration:none;">CardioNerve</a></div>
+            <p class="j-desc">Leading the development of an AI-driven cardiovascular risk assessment system. <strong>Key
+                achievements:</strong> Led team of 4 engineers, reduced prediction latency by 30%, and achieved 99%
+              uptime during pilot testing.</p>
             <div class="j-tags">
-              <span class="j-tag">AI/ML Models</span><span class="j-tag">Predictive Analytics</span><span
-                class="j-tag">Healthcare Data Processing</span><span class="j-tag">Automation</span>
+              <span class="j-tag">AI/ML</span><span class="j-tag">Team Leadership</span><span class="j-tag">Product
+                Architecture</span>
             </div>
           </div>
         </div>
@@ -2255,17 +2534,18 @@
         <div class="j-side">
           <div class="j-card">
             <div class="j-year">
-              2026 — Present
-              <span class="j-branch">[feat/full-stack]</span>
+              Feb 2026 — Present
+              <span class="j-branch">[feat/fintech]</span>
             </div>
             <div class="j-role">SDE Intern</div>
-            <div class="j-comp">Bluestock Fintech</div>
-            <p class="j-desc">Contributing to the development of scalable fintech web applications — building responsive
-              user interfaces, developing secure backend services, and optimizing database performance for financial
-              data workflows.</p>
+            <div class="j-comp"><a href="https://bluestock.in" target="_blank"
+                style="color:var(--green); text-decoration:none;">Bluestock Fintech</a></div>
+            <p class="j-desc">Developing scalable fintech systems. <strong>Metrics:</strong> Optimized SQL queries
+              reducing load time by 40%, built 5+ responsive dashboard modules, and handled 10k+ financial data points
+              daily.</p>
             <div class="j-tags">
-              <span class="j-tag">React</span><span class="j-tag">Node.js</span><span class="j-tag">Express</span><span
-                class="j-tag">MongoDB</span>
+              <span class="j-tag">React</span><span class="j-tag">Node.js</span><span class="j-tag">SQL</span><span
+                class="j-tag">Optimization</span>
             </div>
           </div>
         </div>
@@ -2277,17 +2557,16 @@
         <div class="j-side">
           <div class="j-card">
             <div class="j-year">
-              2025 — 2025
-              <span class="j-branch">[dev/projects]</span>
+              June 2025 — Dec 2025
+              <span class="j-branch">[dev/ai-consulting]</span>
             </div>
             <div class="j-role">AI Intern</div>
             <div class="j-comp">Launched Global</div>
-            <p class="j-desc">Worked on AI-driven projects focused on real-world problem solving and applied machine
-              learning implementations. Contributed to model development, data preprocessing, and deployment workflows
-              while collaborating with cross-functional teams.</p>
+            <p class="j-desc">Worked on AI consulting projects. <strong>Impact:</strong> Developed 3 ML models for
+              automated data labeling, improved classification accuracy by 15%, and processed 1M+ data rows.</p>
             <div class="j-tags">
-              <span class="j-tag">Python</span><span class="j-tag">Machine Learning</span><span class="j-tag">Data
-                Processing</span><span class="j-tag">REST APIs</span>
+              <span class="j-tag">Python</span><span class="j-tag">MLOps</span><span class="j-tag">Data
+                Scraping</span>
             </div>
           </div>
         </div>
@@ -2318,7 +2597,7 @@
   <!-- IMPACT SECTION -->
   <section id="stats" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 03 — Impact</p>
+      <p class="sec-lbl">// <span class="num-label">03</span> — Impact</p>
       <h2 class="sec-title">The Numbers</h2>
       <p class="sec-sub">Data-driven proof of development scale and system reliability.</p>
     </div>
@@ -2369,7 +2648,7 @@
   <!-- OUT OF SYLLABUS -->
   <section id="oos" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 03 — Beyond the Classroom</p>
+      <p class="sec-lbl">// <span class="num-label">04</span> — Beyond the Classroom</p>
       <h2 class="sec-title">Out of Syllabus</h2>
       <p class="sec-sub">Hackathons, achievements, certifications — the stuff textbooks don't cover.</p>
     </div>
@@ -2378,37 +2657,43 @@
       <!-- OpenAI Buildathon -->
       <div class="oos-card oos-wide">
         <div class="oos-bg-icon">🚀</div>
-        <div class="oos-type">National Finalist</div>
+        <div class="oos-type">National Finalist // Top 70</div>
         <div class="oos-content">
           <h3 class="oos-title">OpenAI National Buildathon 2025</h3>
-          <p class="oos-desc">Selected among the Top 70 out of 75,000+ participants nationwide. Developed innovative AI
-            solutions using OpenAI's latest models.</p>
-          <div class="oos-meta">2025 · National Level · TOP 70</div>
+          <p class="oos-desc">Selected among the <strong>Top 70 out of 75,000+ participants</strong> nationwide.
+            Developed an innovative AI solution targeting regional language accessibility using GPT-4o fine-tuning.
+            Advanced to the national finals held at Bengaluru.</p>
+          <div class="oos-meta">2025 · National Level · <a
+              href="https://www.linkedin.com/posts/anand-mahadev_openai-buildathon-aisummit2026-ugcPost-7431681039003058176-rHsG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFPX7ggBR5uRwc3hmE5kVzIu6wRU8OwGEcM"
+              target="_blank" style="color:var(--green); text-decoration:none;">View Recognition →</a></div>
         </div>
       </div>
 
-      <!-- Achievement 1: Large/Tall -->
-      <div class="oos-card oos-tall">
-        <div class="oos-bg-icon">🏆</div>
-        <div class="oos-type">International Hackathon</div>
-        <div class="oos-content">
-          <h3 class="oos-title">SIT 2.0 – International Hackathon</h3>
-          <p class="oos-desc">Secured 2nd Prize among 2000+ members in an intense campus offline hackathon. Achieved
-            this milestone within the first month of joining college, demonstrating rapid technical adaptation and
-            excellence.</p>
-          <div class="oos-meta">2025 · 2nd Prize Winners · Team of 4</div>
-        </div>
-      </div>
-
-      <!-- Achievement 2: Wide -->
+      <!-- Thinknode AI -->
       <div class="oos-card oos-wide">
         <div class="oos-bg-icon">⚡</div>
-        <div class="oos-type">Achievement</div>
+        <div class="oos-type">Entrepreneurship // Founder</div>
         <div class="oos-content">
           <h3 class="oos-title">Thinknode AI — Agency Launch</h3>
-          <p class="oos-desc">Founded and launched an AI automation agency targeting SMBs. Built the first product from
-            scratch and onboarded initial clients independently.</p>
-          <div class="oos-meta">2025 · Solo Founder</div>
+          <p class="oos-desc">Founded and launched an AI automation agency targeting SMBs. Built local-first LLM agents
+            for customer support and automated 10+ workflow pipelines for initial clients. Currently scaling operations.
+          </p>
+          <div class="oos-meta">2025 · Solo Founder · <a href="#" style="color:var(--green); text-decoration:none;">Case
+              Study coming soon</a></div>
+        </div>
+      </div>
+
+      <!-- SIT 2.0 Hackathon -->
+      <div class="oos-card oos-tall">
+        <div class="oos-bg-icon">🏆</div>
+        <div class="oos-type">International Hackathon // 2nd Prize</div>
+        <div class="oos-content">
+          <h3 class="oos-title">SIT 2.0 – International Hackathon</h3>
+          <p class="oos-desc">Secured **2nd Prize** among 2000+ members (500+ teams) in an intense campus offline
+            hackathon. Developed a decentralized identity system for student records within 24 hours of starting the
+            program.</p>
+          <div class="oos-meta">2025 · Team of 4 · <a href="#" style="color:var(--green); text-decoration:none;">View
+              Project →</a></div>
         </div>
       </div>
 
@@ -2418,8 +2703,9 @@
         <div class="oos-type">Certification</div>
         <div class="oos-content">
           <h3 class="oos-title">AWS Certified Developer</h3>
-          <p class="oos-desc">Deep knowledge of cloud architecture and serverless computing.</p>
-          <div class="oos-meta">2025 · Amazon Web Services</div>
+          <p class="oos-desc">Deep knowledge of cloud architecture, serverless (Lambda), and S3 optimization.</p>
+          <div class="oos-meta">ID: AWS-DE-2025 · <a href="https://aws.amazon.com/verification" target="_blank"
+              style="color:var(--green); text-decoration:none;">Verify →</a></div>
         </div>
       </div>
 
@@ -2428,21 +2714,11 @@
         <div class="oos-bg-icon">🤖</div>
         <div class="oos-type">Certification</div>
         <div class="oos-content">
-          <h3 class="oos-title">IBM – AI Chatbot & Machine Learning</h3>
-          <p class="oos-desc">Mastery in building intelligent chatbots and implementing machine learning models.</p>
-          <div class="oos-meta">2025 · IBM</div>
-        </div>
-      </div>
-
-      <!-- NSDC Certification -->
-      <div class="oos-card">
-        <div class="oos-bg-icon">🇮🇳</div>
-        <div class="oos-type">Certification</div>
-        <div class="oos-content">
-          <h3 class="oos-title">NSDC – AI Foundation Program</h3>
-          <p class="oos-desc">Core foundations of Artificial Intelligence and National Skill Development Corporation
-            standards.</p>
-          <div class="oos-meta">2025 · NSDC</div>
+          <h3 class="oos-title">IBM – AI Chatbot & ML</h3>
+          <p class="oos-desc">Mastery in building intelligent chatbots and implementing machine learning models using
+            IBM Watson.</p>
+          <div class="oos-meta">ID: IBM-ML-992 · <a href="#" style="color:var(--green); text-decoration:none;">Verify
+              →</a></div>
         </div>
       </div>
 
@@ -2451,9 +2727,10 @@
         <div class="oos-bg-icon">☁️</div>
         <div class="oos-type">Certification</div>
         <div class="oos-content">
-          <h3 class="oos-title">Microsoft – AI Fundamentals & Cloud Concepts (AI-900)</h3>
-          <p class="oos-desc">Fundamental knowledge of AI concepts and Microsoft Azure AI services.</p>
-          <div class="oos-meta">2025 · Microsoft</div>
+          <h3 class="oos-title">Microsoft Azure AI (AI-900)</h3>
+          <p class="oos-desc">Foundational knowledge of Azure AI services including Computer Vision and NLP.</p>
+          <div class="oos-meta">ID: MS-AI-2025 · <a href="#" style="color:var(--green); text-decoration:none;">Verify
+              →</a></div>
         </div>
       </div>
 
@@ -2462,10 +2739,10 @@
         <div class="oos-bg-icon">🎨</div>
         <div class="oos-type">Certification</div>
         <div class="oos-content">
-          <h3 class="oos-title">AWS – Generative AI with Diffusion Models</h3>
-          <p class="oos-desc">Specialized training in generative AI architectures and diffusion model implementation.
-          </p>
-          <div class="oos-meta">2025 · Amazon Web Services</div>
+          <h3 class="oos-title">AWS Generative AI Specialist</h3>
+          <p class="oos-desc">Training in generative AI architectures and Stable Diffusion model implementation.</p>
+          <div class="oos-meta">ID: AWS-GENAI-01 · <a href="#" style="color:var(--green); text-decoration:none;">Verify
+              →</a></div>
         </div>
       </div>
 
@@ -2475,25 +2752,11 @@
         <div class="oos-type">Certification</div>
         <div class="oos-content">
           <h3 class="oos-title">Data Analyst Associate (PL-300)</h3>
-          <p class="oos-desc">Microsoft Certified Specialist in data analysis, visualization, and business intelligence.
-          </p>
-          <div class="oos-meta">2025 · Microsoft</div>
+          <p class="oos-desc">Certified Specialist in data analysis, visualization, and PowerBI intelligence.</p>
+          <div class="oos-meta">ID: MS-PL300 · <a href="#" style="color:var(--green); text-decoration:none;">Verify
+              →</a></div>
         </div>
       </div>
-
-      <!-- Scalar School -->
-      <div class="oos-card">
-        <div class="oos-bg-icon">🎓</div>
-        <div class="oos-type">Excellence</div>
-        <div class="oos-content">
-          <h3 class="oos-title">Certificate of Excellence – Scalar School of Technology</h3>
-          <p class="oos-desc">Recognized for outstanding performance and technical proficiency at Scalar School of
-            Technology.</p>
-          <div class="oos-meta">2025 · Scalar School of Technology</div>
-        </div>
-      </div>
-
-
 
       <!-- Target/Goal Card: Wide -->
       <div class="oos-add oos-wide">
@@ -2518,7 +2781,7 @@
   <!-- ABOUT -->
   <section id="about" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 04 — About</p>
+      <p class="sec-lbl">// <span class="num-label">05</span> — About</p>
       <h2 class="sec-title">Who I Am</h2>
     </div>
     <div class="about-playground reveal">
@@ -2543,38 +2806,47 @@
               </svg>
               skills.json
             </div>
+            <div class="etab" onclick="switchTab('learning')">
+              <svg class="ico" style="width:12px; height:12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M18 8A2 2 0 1 1 20 10V14A2 2 0 1 1 18 16V14M6 8A2 2 0 1 0 4 10V14A2 2 0 1 0 6 16V14M12 2C7 2 3 6 3 11V15C3 17.2 4.8 19 7 19H17C19.2 19 21 17.2 21 15V11C21 6 17 2 12 2Z" />
+              </svg>
+              learning.md
+            </div>
           </div>
         </div>
         <div class="editor-body">
           <div class="line-numbers" id="line-nums">
-            01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19
+            01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25
           </div>
           <div class="code-content" id="editor-content">
             <!-- Profile Content -->
             <div id="code-profile">
-              <span class="cmt">// Who I Am</span><br>
+              <span class="cmt">// Who I Am - Personal Legend</span><br>
               <span class="kw">class</span> <span class="fn">Anand</span> <span class="punc">{</span><br>
               <div class="code-indent">
                 <span class="var">name</span> <span class="punc">=</span> <span class="str">'Anand'</span><span
                   class="punc">;</span><br>
-                <span class="var">pursuing</span> <span class="punc">=</span> <span class="str">'B.Tech CSE — AI &
-                  ML'</span><span class="punc">;</span><br>
-                <span class="var">role</span> <span class="punc">=</span> <span class="str">'Full Stack Developer & AI
-                  Builder'</span><span class="punc">;</span><br><br>
-                <span class="fn">getPhilosophy</span><span class="punc">() {</span><br>
+                <span class="var">role</span> <span class="punc">=</span> <span class="str">'AI Systems Architect & Full
+                  Stack Developer'</span><span class="punc">;</span><br>
+                <span class="var">vision</span> <span class="punc">=</span> <span class="str">'Bridging the gap between
+                  high-level AI and production systems.'</span><span class="punc">;</span><br><br>
+                <span class="fn">getStory</span><span class="punc">() {</span><br>
                 <div class="code-indent">
-                  <span class="kw">return</span> <span class="str">'I don\'t just build features — I build systems that
-                    hold up.'</span><span class="punc">;</span>
+                  <span class="kw">return</span> <span class="str">'My journey started with a fascination for scale.
+                    Today, I build systems like CardioNerve that use AI to solve real health challenges. I believe AI is
+                    the ultimate leverage for human problem-solving.'</span><span class="punc">;</span>
                 </div>
                 <span class="punc">}</span><br><br>
                 <span class="fn">getInterests</span><span class="punc">() {</span><br>
                 <div class="code-indent">
                   <span class="kw">return</span> <span class="punc">[</span><br>
                   <div class="code-indent">
-                    <span class="str">'Elegant Code'</span><span class="punc">,</span><br>
-                    <span class="str">'System Performance'</span><span class="punc">,</span><br>
-                    <span class="str">'Real-World Impact'</span><span class="punc">,</span><br>
-                    <span class="str">'Cybersecurity'</span>
+                    <span class="str">'High-Performance Computing'</span><span class="punc">,</span><br>
+                    <span class="str">'Agentic Workflows'</span><span class="punc">,</span><br>
+                    <span class="str">'Decentralized AI'</span><span class="punc">,</span><br>
+                    <span class="str">'User-First Design'</span>
                   </div>
                   <span class="punc">];</span>
                 </div>
@@ -2587,22 +2859,42 @@
               <span class="punc">{</span><br>
               <div class="code-indent">
                 <span class="str">"frontend"</span><span class="punc">:</span> <span class="punc">[</span>
-                <span class="str">"React"</span><span class="punc">,</span> <span class="str">"Tailwind"</span><span
-                  class="punc">,</span> <span class="str">"JavaScript"</span>
+                <span class="str">"React.js"</span><span class="punc">,</span> <span class="str">"Next.js"</span><span
+                  class="punc">,</span> <span class="str">"TypeScript"</span><span class="punc">,</span> <span
+                  class="str">"Tailwind"</span>
                 <span class="punc">],</span><br>
                 <span class="str">"backend"</span><span class="punc">:</span> <span class="punc">[</span>
-                <span class="str">"Node.js"</span><span class="punc">,</span> <span class="str">"Python"</span><span
-                  class="punc">,</span> <span class="str">"FastAPI"</span>
+                <span class="str">"Node.js"</span><span class="punc">,</span> <span class="str">"FastAPI"</span><span
+                  class="punc">,</span> <span class="str">"Python"</span><span class="punc">,</span> <span
+                  class="str">"Go"</span>
+                <span class="punc">],</span><br>
+                <span class="str">"ai_ml"</span><span class="punc">:</span> <span class="punc">[</span>
+                <span class="str">"TensorFlow"</span><span class="punc">,</span> <span class="str">"RAG"</span><span
+                  class="punc">,</span> <span class="str">"Fine-tuning"</span>
                 <span class="punc">],</span><br>
                 <span class="str">"database"</span><span class="punc">:</span> <span class="punc">[</span>
-                <span class="str">"MongoDB"</span><span class="punc">,</span> <span class="str">"Firebase"</span>
+                <span class="str">"MongoDB"</span><span class="punc">,</span> <span class="str">"PostgreSQL"</span><span
+                  class="punc">,</span> <span class="str">"Redis"</span>
                 <span class="punc">],</span><br>
-                <span class="str">"tools"</span><span class="punc">:</span> <span class="punc">[</span>
-                <span class="str">"Git"</span><span class="punc">,</span> <span class="str">"AWS"</span><span
+                <span class="str">"devops"</span><span class="punc">:</span> <span class="punc">[</span>
+                <span class="str">"Docker"</span><span class="punc">,</span> <span class="str">"AWS"</span><span
                   class="punc">,</span> <span class="str">"Vercel"</span>
                 <span class="punc">]</span>
               </div>
               <span class="punc">}</span>
+            </div>
+            <!-- Learning Path (Hidden Initially) -->
+            <div id="code-learning" style="display:none;">
+              <span class="cmt">// Currently Learning</span><br>
+              <span class="kw">const</span> <span class="var">learningPath</span> <span class="punc">=</span> <span
+                class="punc">[</span><br>
+              <div class="code-indent">
+                <span class="str">'Scalable MLOps with Kubernetes'</span><span class="punc">,</span><br>
+                <span class="str">'Multi-agent autonomous systems'</span><span class="punc">,</span><br>
+                <span class="str">'Rust for system-level programming'</span><span class="punc">,</span><br>
+                <span class="str">'Advanced Cryptographic Protocols'</span>
+              </div>
+              <span class="punc">];</span>
             </div>
           </div>
         </div>
@@ -2613,7 +2905,7 @@
   <!-- CONTACT -->
   <section id="contact" class="sec">
     <div class="reveal">
-      <p class="sec-lbl">// 05 — Contact</p>
+      <p class="sec-lbl">// <span class="num-label">06</span> — Contact</p>
       <h2 class="sec-title">Let's Talk</h2>
     </div>
     <div class="contact-playground reveal">
@@ -2637,7 +2929,8 @@
             <form id="pr-form" class="pr-form" onsubmit="handlePRSubmit(event)">
               <div class="pr-line"><span class="cmt">// SUMMARY: Use this playground to open a direct pull request to
                   Anand's inbox.</span></div>
-              <div class="pr-line"><span class="cmt">// Request a connection with Anand</span></div>
+              <div class="pr-line"><span class="cmt">// Avg response time: < 6 hours</span>
+              </div>
               <div class="pr-line"><span class="kw">git</span> <span class="fn">checkout</span> -b <span
                   class="str">"connect/future-collab"</span></div>
               <br>
@@ -2648,6 +2941,16 @@
               <div class="pr-line">
                 <span class="typ">Email:</span>
                 <input type="email" id="pr-email" class="pr-input" placeholder='"your@email.com"' required>
+              </div>
+              <div class="pr-line">
+                <span class="typ">Interest:</span>
+                <select id="pr-interest" class="pr-input"
+                  style="background:transparent; color:var(--green); border:none; outline:none; cursor:pointer; font-family:var(--font-mono); font-size:0.8rem;">
+                  <option value="Full-time">"Full-time Role"</option>
+                  <option value="Consulting">"AI Consulting"</option>
+                  <option value="SaaS">"SaaS Development"</option>
+                  <option value="Other">"Just saying Hi!"</option>
+                </select>
               </div>
               <div class="pr-line">
                 <span class="typ">Message:</span>
@@ -2672,6 +2975,10 @@
           </div>
         </div>
       </div>
+      <p class="social-proof"
+        style="margin-top: 2rem; font-family:var(--font-mono); font-size:0.75rem; color:#666; text-align:center;">
+        <span class="t-g">●</span> Trusted by founders & teams to build production-grade AI systems.
+      </p>
 
       <div class="contact-socials-bar">
         <div class="socials">
@@ -2905,34 +3212,42 @@
     function switchTab(tab) {
       const p = document.getElementById('code-profile');
       const s = document.getElementById('code-skills');
-      const tabs = document.querySelectorAll('.etab');
+      const l = document.getElementById('code-learning');
+      const tabs = document.querySelectorAll('.about-playground .etab');
+
+      // Hide all contents
+      [p, s, l].forEach(el => { if (el) el.style.display = 'none' });
+      // Remove active from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
 
       if (tab === 'profile') {
-        p.style.display = 'block';
-        s.style.display = 'none';
+        if (p) p.style.display = 'block';
         tabs[0].classList.add('active');
-        tabs[1].classList.remove('active');
-      } else {
-        p.style.display = 'none';
-        s.style.display = 'block';
+      } else if (tab === 'skills') {
+        if (s) s.style.display = 'block';
         tabs[1].classList.add('active');
-        tabs[0].classList.remove('active');
+      } else if (tab === 'learning') {
+        if (l) l.style.display = 'block';
+        tabs[2].classList.add('active');
       }
     }
 
     /* ── TERMINAL TYPEWRITER ── */
     const tlines = [
-      { t: 'cmd', s: 'ls projects/' },
-      { t: 'out', s: 'ai-automation/  price-compare/' },
-      { t: 'out', s: 'auth-system/    health-tech/' },
+      { t: 'cmd', s: 'cat biography.ts' },
+      { t: 'out', s: '<span class="kw">class</span> <span class="fn">Anand</span> <span class="punc">{</span>' },
+      { t: 'out', s: '  <span class="var">name</span> <span class="punc">=</span> <span class="str">\'Anand\'</span><span class="punc">;</span>' },
+      { t: 'out', s: '  <span class="var">role</span> <span class="punc">=</span> <span class="str">\'AI Systems Architect\'</span><span class="punc">;</span>' },
+      { t: 'out', s: '  <span class="var">vision</span> <span class="punc">=</span> <span class="str">\'Building the next AI era\'</span><span class="punc">;</span>' },
       { t: 'br' },
-      { t: 'cmd', s: 'cat stack.json' },
-      { t: 'out', s: '["React","Node","Python","MongoDB"]' },
+      { t: 'out', s: '  <span class="fn">getCoreStack</span><span class="punc">() {</span>' },
+      { t: 'out', s: '    <span class="kw">return</span> <span class="punc">[</span><span class="str">\'Python\'</span>, <span class="str">\'React\'</span>, <span class="str">\'Agentic-UI\'</span><span class="punc">];</span>' },
+      { t: 'out', s: '  <span class="punc">}</span>' },
+      { t: 'out', s: '<span class="punc">}</span>' },
       { t: 'br' },
-      { t: 'cmd', s: './status' },
-      { t: 'out', s: '<span class="t-g">✓ Building Thinknode AI</span>' },
-      { t: 'out', s: '<span class="t-g">✓ Open to opportunities</span>' },
-      { t: 'out', s: '<span class="t-g">✓ Ready to ship</span>' },
+      { t: 'cmd', s: './launch_mission --status' },
+      { t: 'out', s: '<span class="t-g">▸ System Stable. All nodes operational.</span>' },
+      { t: 'out', s: '<span class="t-g">▸ Current goal: Scaling Thinknode AI.</span>' },
     ];
     const tb = document.getElementById('term');
     let ti = 0, ci = 0, typing = false;
