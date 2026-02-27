@@ -1949,6 +1949,50 @@
       color: var(--green);
     }
 
+    .mobile-game-controls {
+      display: none;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      justify-content: space-between;
+      padding: 0 30px;
+      pointer-events: none;
+      z-index: 5;
+      /* Below overlays (10/20) but above canvas */
+    }
+
+    .m-btn {
+      width: 70px;
+      height: 70px;
+      background: rgba(8, 8, 8, 0.4);
+      border: 1px solid rgba(57, 255, 20, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      color: var(--green);
+      backdrop-filter: blur(8px);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .m-btn:active {
+      background: rgba(57, 255, 20, 0.2);
+      transform: scale(0.9);
+      border-color: var(--green);
+    }
+
+    .m-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+    }
+
     /* ── SCREENSHOT PREVIEW ── */
     #ss-modal {
       position: absolute;
@@ -2163,6 +2207,10 @@
 
       .stat-num {
         font-size: 2.8rem;
+      }
+
+      .mobile-game-controls {
+        display: flex;
       }
 
       .game-header {
@@ -3097,6 +3145,19 @@
           <div class="back-to-menu" onclick="showMenu()">← BACK TO SELECTOR</div>
         </div>
 
+        <div class="mobile-game-controls">
+          <button class="m-btn m-left" id="m-left">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="m-btn m-right" id="m-right">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
         <div id="ss-modal">
           <div class="ss-inner">
             <div class="ss-close" onclick="closeSS()">[ CLOSE_X ]</div>
@@ -3715,6 +3776,41 @@
     }
 
     function closeSS() { document.getElementById('ss-modal').style.display = 'none'; }
+
+    // MOBILE CONTROLS
+    function handleMobileMove(dir) {
+      if (!gameRunning) return;
+      if (currentMode === 'brick') {
+        if (dir === 'left') {
+          paddle.x = Math.max(0, paddle.x - 40);
+        } else {
+          paddle.x = Math.min(canvas.width - paddle.w, paddle.x + 40);
+        }
+        updateUI();
+      } else if (currentMode === 'snake') {
+        if (dir === 'left') {
+          if (snake.dy === -grid) { snake.dx = -grid; snake.dy = 0; }
+          else if (snake.dx === -grid) { snake.dx = 0; snake.dy = grid; }
+          else if (snake.dy === grid) { snake.dx = grid; snake.dy = 0; }
+          else if (snake.dx === grid) { snake.dx = 0; snake.dy = -grid; }
+        } else {
+          if (snake.dy === -grid) { snake.dx = grid; snake.dy = 0; }
+          else if (snake.dx === grid) { snake.dx = 0; snake.dy = grid; }
+          else if (snake.dy === grid) { snake.dx = -grid; snake.dy = 0; }
+          else if (snake.dx === -grid) { snake.dx = 0; snake.dy = -grid; }
+        }
+      }
+    }
+
+    const ml = document.getElementById('m-left');
+    const mr = document.getElementById('m-right');
+
+    if (ml && mr) {
+      ml.addEventListener('touchstart', (e) => { e.preventDefault(); handleMobileMove('left'); });
+      mr.addEventListener('touchstart', (e) => { e.preventDefault(); handleMobileMove('right'); });
+      ml.addEventListener('mousedown', (e) => { if ('ontouchstart' in window) return; e.preventDefault(); handleMobileMove('left'); });
+      mr.addEventListener('mousedown', (e) => { if ('ontouchstart' in window) return; e.preventDefault(); handleMobileMove('right'); });
+    }
 
   </script>
 </body>
