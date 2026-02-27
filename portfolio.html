@@ -39,7 +39,7 @@
     }
 
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -3401,19 +3401,23 @@
     }, { threshold: .1 });
     document.querySelectorAll('.exp-item').forEach((el, i) => { el.dataset.d = i * 80; expObs.observe(el); });
 
-    /* ── PARALLAX SCROLL ── */
-    window.addEventListener('scroll', () => {
+    /* ── PARALLAX SCROLL ENGINE ── */
+    let lastScroll = 0;
+    function updateParallax() {
       const scrolled = window.pageYOffset;
-      const hg = document.querySelector('.hero-glow');
-      const tr = document.querySelector('.hero-right');
-      const body = document.body;
+      if (scrolled !== lastScroll) {
+        lastScroll = scrolled;
+        const hg = document.querySelector('.hero-glow');
+        const tr = document.querySelector('.hero-right');
+        const body = document.body;
 
-      if (hg) hg.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.15}px))`;
-      if (tr) tr.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${scrolled * 0.08}px)`;
-
-      // Moving background grid slightly
-      body.style.backgroundPositionY = `${scrolled * 0.1}px`;
-    });
+        if (hg) hg.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.15}px))`;
+        if (tr) tr.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${scrolled * 0.08}px)`;
+        body.style.backgroundPositionY = `${scrolled * 0.1}px`;
+      }
+      requestAnimationFrame(updateParallax);
+    }
+    requestAnimationFrame(updateParallax);
 
     /* ── PROJECT SPOTLIGHT ── */
     document.querySelectorAll('.proj-card').forEach(card => {
