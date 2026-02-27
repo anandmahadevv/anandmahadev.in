@@ -3009,7 +3009,7 @@
         </div>
         <div class="editor-body pr-editor">
           <div class="code-content">
-            <form id="pr-form" class="pr-form" onsubmit="handlePRSubmit(event)">
+            <form id="pr-form" class="pr-form" action="#" method="POST" onsubmit="handlePRSubmit(event)">
               <div class="pr-line"><span class="cmt">// SUMMARY: Use this playground to open a direct pull request to
                   Anand's inbox.</span></div>
               <div class="pr-line"><span class="cmt">// Avg response time: < 6 hours</span>
@@ -3019,15 +3019,15 @@
               <br>
               <div class="pr-line">
                 <span class="typ">Name:</span>
-                <input type="text" id="pr-name" class="pr-input" placeholder='"Your Name"' required>
+                <input type="text" name="name" class="pr-input" placeholder='"Your Name"' required>
               </div>
               <div class="pr-line">
                 <span class="typ">Email:</span>
-                <input type="email" id="pr-email" class="pr-input" placeholder='"your@email.com"' required>
+                <input type="email" name="email" class="pr-input" placeholder='"your@email.com"' required>
               </div>
               <div class="pr-line">
                 <span class="typ">Interest:</span>
-                <select id="pr-interest" class="pr-input"
+                <select name="interest" class="pr-input"
                   style="background:transparent; color:var(--green); border:none; outline:none; cursor:pointer; font-family:var(--font-mono); font-size:0.8rem;">
                   <option value="Full-time">"Full-time Role"</option>
                   <option value="Consulting">"AI Consulting"</option>
@@ -3037,7 +3037,7 @@
               </div>
               <div class="pr-line">
                 <span class="typ">Message:</span>
-                <textarea id="pr-msg" class="pr-input pr-area" placeholder='"What project are we building?"'
+                <textarea name="message" class="pr-input pr-area" placeholder='"What project are we building?"'
                   required></textarea>
               </div>
               <br>
@@ -3214,6 +3214,7 @@
         target="_blank" style="color: var(--green); text-decoration: none;">dshenoyh.in</a></p>
   </footer>
 
+  <script src="config.js"></script>
   <script>
     /* ── SCROLL RESTORATION ── */
     if ('scrollRestoration' in history) {
@@ -3513,16 +3514,25 @@
     });
 
     /* ── PR FORM LOGIC ── */
-    function handlePRSubmit(e) {
+    async function handlePRSubmit(e) {
       e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
       const output = document.getElementById('pr-output');
       const content = document.getElementById('out-content');
-      const btn = e.target.querySelector('.pr-btn');
+      const btn = form.querySelector('.pr-btn');
 
       output.style.display = 'block';
       btn.disabled = true;
       btn.style.opacity = '0.5';
       btn.textContent = 'Pushing...';
+
+      // Start the submission in the background
+      const submission = fetch(window.CONFIG?.FORMSPREE_URL || "https://formspree.io/f/xdaljoyd", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
 
       const lines = [
         { c: 'out-cmd', t: '> Verifying user credentials...' },
@@ -3552,7 +3562,7 @@
           btn.style.background = 'rgba(204, 255, 0, 0.1)';
           btn.style.color = 'var(--green)';
           btn.style.border = '1px solid var(--green)';
-          e.target.reset();
+          form.reset();
         }
       }
 
