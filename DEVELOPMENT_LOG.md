@@ -16,3 +16,6 @@
 ## Update (2026-03-20T09:47:46)
 - feat: implement caching for frequent queries
 
+## Update (2026-03-06T09:47:46)
+- docs: clarify setup instructions in README
+
