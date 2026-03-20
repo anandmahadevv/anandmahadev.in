@@ -13,3 +13,6 @@
 ## Update (2026-04-03T09:47:45)
 - chore: update dependencies to latest stable versions
 
+## Update (2026-03-20T09:47:46)
+- feat: implement caching for frequent queries
+
