@@ -2734,16 +2734,16 @@
 
     <div class="stats-grid reveal">
       <div class="stat-card">
-        <div class="stat-num" data-target="15">0</div>
+        <div class="stat-num" data-target="20">0</div>
         <div class="stat-label">Hackathons</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num" data-target="08">0</div>
+        <div class="stat-num" data-target="10">0</div>
         <div class="stat-label">Finalist Wins</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num" data-target="15">0</div>
-        <div class="stat-label">Projects Shipped</div>
+        <div class="stat-num" data-target="1000">0</div>
+        <div class="stat-label">App Users</div>
       </div>
       <div class="stat-card">
         <div class="stat-num" data-target="04">0</div>
@@ -3533,12 +3533,14 @@
               let display = current;
               if (target > 1000) display = (current / 1000).toFixed(1) + 'k';
               if (isPercent) display = current + '%';
-              else if (target < 100 && target > 0) display = current.toString().padStart(2, '0') + '+';
+              else if (target <= 1000 && target > 0) {
+                display = (target < 100 ? current.toString().padStart(2, '0') : current.toString()) + '+';
+              }
 
               num.textContent = display;
 
               if (progress < 1) requestAnimationFrame(update);
-              else num.textContent = targetStr + (targetStr.length <= 3 && !isPercent ? '+' : '');
+              else num.textContent = targetStr + (targetStr.length <= 4 && !isPercent ? '+' : '');
             };
             update();
           });
