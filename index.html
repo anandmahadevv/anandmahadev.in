@@ -2346,6 +2346,26 @@
       box-shadow: 0 0 8px var(--green);
     }
 
+    .contrib-dot--open {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+      box-shadow: 0 0 8px #f97316;
+    }
+
+    .contrib-status--open {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      background: rgba(249, 115, 22, 0.1);
+      color: #f97316;
+    }
+
     .contrib-title {
       font-family: var(--font-head);
       font-size: 1.1rem;
@@ -2879,6 +2899,64 @@
           </a>
         </div>
       </div>
+
+      <!-- ESP-Website Card 1 -->
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <span class="contrib-repo">learning-unlimited/ESP-Website</span>
+          <span class="contrib-status--open">
+            <span class="contrib-dot--open"></span>
+            In Progress
+          </span>
+        </div>
+        <h3 class="contrib-title">Fix: apply_settings() DB Hit on Every Call</h3>
+        <p class="contrib-desc">Investigating a performance bug where apply_settings() queries the database on every invocation instead of caching — causing unnecessary load on the ESP platform at scale.</p>
+        <div class="contrib-footer">
+          <span>Issue #5445 (bug)</span>
+          <a href="https://github.com/learning-unlimited/ESP-Website/issues/5445" class="contrib-pr-link" target="_blank">
+            View Issue ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- ESP-Website Card 2 -->
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <span class="contrib-repo">learning-unlimited/ESP-Website</span>
+          <span class="contrib-status--open">
+            <span class="contrib-dot--open"></span>
+            In Progress
+          </span>
+        </div>
+        <h3 class="contrib-title">Fix: List Generator Crash on Stale Filter ID</h3>
+        <p class="contrib-desc">Debugging a crash in the List Generator where the old selector panics on stale or invalid filter IDs, causing silent failure during student list generation workflows.</p>
+        <div class="contrib-footer">
+          <span>Issue #5176 (bug)</span>
+          <a href="https://github.com/learning-unlimited/ESP-Website/issues/5176" class="contrib-pr-link" target="_blank">
+            View Issue ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- ESP-Website Card 3 -->
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <span class="contrib-repo">learning-unlimited/ESP-Website</span>
+          <span class="contrib-status--open">
+            <span class="contrib-dot--open"></span>
+            In Progress
+          </span>
+        </div>
+        <h3 class="contrib-title">Fix: Silent Exception Swallowing in csrf.py</h3>
+        <p class="contrib-desc">Resolving a silent exception suppression bug in esp/web/views/csrf.py where exceptions are caught without logging — masking critical CSRF-related errors in production.</p>
+        <div class="contrib-footer">
+          <span>Issue #4499 (bug)</span>
+          <a href="https://github.com/learning-unlimited/ESP-Website/issues/4499" class="contrib-pr-link" target="_blank">
+            View Issue ↗
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
   <!-- EXPERIENCE -->
