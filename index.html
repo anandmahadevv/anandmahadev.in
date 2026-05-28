@@ -2128,6 +2128,7 @@
         display: none;
       }
 
+      /* NAV */
       .nav-menu-btn {
         display: flex;
       }
@@ -2157,15 +2158,31 @@
         letter-spacing: 3px;
       }
 
+      /* HERO */
       #hero {
         grid-template-columns: 1fr;
         text-align: left;
         padding-top: 8rem;
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 2rem;
+      }
+
+      .h-badge {
+        font-size: 0.7rem;
+        white-space: normal;
+        word-break: break-word;
       }
 
       .h-name {
-        font-size: clamp(3.2rem, 15vw, 4.8rem);
+        font-size: clamp(3rem, 14vw, 4.8rem);
         line-height: 0.95;
+      }
+
+      .h-loc {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        font-size: 0.8rem;
       }
 
       .hero-right {
@@ -2177,26 +2194,139 @@
         max-width: 100%;
       }
 
+      /* SECTIONS */
+      .sec {
+        padding: 5rem 5% 3rem;
+      }
+
+      .sec-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+      }
+
+      /* PROJECTS */
       .proj-card {
         grid-template-columns: 1fr;
         padding: 1.5rem;
+        gap: 0;
       }
 
       .proj-right {
         display: none;
-        /* Keep hidden on mobile to save space unless explicitly asked */
       }
 
-      .exp-item {
+      .proj-num {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      .proj-title {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+        word-break: break-word;
+      }
+
+      .proj-desc {
+        font-size: 0.85rem;
+      }
+
+      .proj-stack {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .proj-links {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      /* CONTRIBUTIONS */
+      .contrib-grid {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
-        padding-bottom: 2rem;
+        gap: 1rem;
       }
 
+      .contrib-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .contrib-repo {
+        font-size: 0.75rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: calc(100% - 90px);
+      }
+
+      .contrib-title {
+        font-size: 1rem;
+      }
+
+      .contrib-footer {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* EXPERIENCE/JOURNEY */
+      .journey-track::before {
+        left: 20px;
+      }
+
+      .j-dot {
+        left: 20px;
+      }
+
+      .j-side {
+        width: calc(100% - 60px);
+      }
+
+      .journey-item {
+        margin-bottom: 3rem;
+        justify-content: flex-end;
+      }
+
+      .journey-item:nth-child(even) {
+        flex-direction: row;
+      }
+
+      .j-card {
+        padding: 1.25rem;
+      }
+
+      .j-role {
+        font-size: 1rem;
+        word-break: break-word;
+      }
+
+      .j-comp {
+        font-size: 0.85rem;
+        word-break: break-word;
+      }
+
+      .j-tags {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      /* OOS BENTO */
       .oos-grid {
         grid-template-columns: 1fr;
       }
 
+      .oos-card.oos-wide,
+      .oos-card.oos-tall {
+        grid-column: 1;
+        grid-row: auto;
+      }
+
+      .oos-bg-icon {
+        font-size: 5rem;
+        opacity: 0.06;
+      }
+
+      /* CONTACT */
       .contact-playground {
         grid-template-columns: 1fr;
       }
@@ -2209,7 +2339,6 @@
 
       .line-numbers {
         display: none;
-        /* Hide line numbers on small screens to save space */
       }
 
       .game-container {
@@ -2218,6 +2347,7 @@
         border-right: none;
       }
 
+      /* FOOTER */
       footer {
         flex-direction: column;
         gap: 1.2rem;
@@ -2236,16 +2366,31 @@
       .h-btns .btn-o {
         width: 100%;
         text-align: center;
+        justify-content: center;
       }
 
       .sec-title {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
 
       .stat-num {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
       }
 
+      .proj-meta-tags {
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .stack-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+      }
+
+      .plink {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
 
       .game-header {
         flex-direction: column;
@@ -2266,6 +2411,47 @@
 
       .pr-input {
         width: 100%;
+      }
+    }
+
+    /* Ultra-small screens (iPhone SE, Galaxy fold) */
+    @media (max-width: 380px) {
+      .h-name {
+        font-size: 2.8rem;
+      }
+
+      .nav-logo {
+        font-size: 1rem;
+      }
+
+      .sec {
+        padding: 4rem 4% 2.5rem;
+      }
+
+      .proj-card {
+        padding: 1.25rem;
+      }
+
+      .contrib-card {
+        padding: 1.1rem;
+      }
+
+      .contrib-repo {
+        max-width: 100%;
+        white-space: normal;
+        font-size: 0.7rem;
+      }
+
+      .j-card {
+        padding: 1rem;
+      }
+
+      .oos-card {
+        padding: 1.25rem;
+      }
+
+      .stat-num {
+        font-size: 2.2rem;
       }
     }
 
