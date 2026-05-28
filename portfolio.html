@@ -2272,6 +2272,120 @@
         width: 100%;
       }
     }
+
+    /* ── CONTRIBUTIONS SECTION ── */
+    .contrib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contrib-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .contrib-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .contrib-card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .contrib-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(var(--green-rgb), 0.4);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 10px 30px -15px rgba(var(--green-rgb), 0.15);
+    }
+
+    .contrib-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .contrib-repo {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--gray-light);
+    }
+
+    .contrib-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      background: rgba(74, 222, 128, 0.1);
+      color: var(--green);
+    }
+
+    .contrib-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .contrib-title {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .contrib-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .contrib-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: #666;
+    }
+
+    .contrib-pr-link {
+      color: var(--green);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: opacity 0.2s;
+    }
+
+    .contrib-pr-link:hover {
+      text-decoration: underline;
+    }
   </style>
   <script type="application/ld+json">
     {
@@ -2371,10 +2485,67 @@
 
     <div class="proj-grid">
 
-      <!-- CardioNerve - POSITION 01 -->
+      <!-- HackMate - POSITION 01 -->
       <div class="proj-card reveal">
         <div class="proj-info">
-          <div class="proj-num">PROJECT — 01 // HIGHEST IMPACT</div>
+          <div class="proj-num">PROJECT — 01 // VIRAL AI COPILOT</div>
+          <h3 class="proj-title">HackMate</h3>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="stack-tag">AI Copilot</span>
+            <span class="stack-tag">Open Source</span>
+          </div>
+          <div class="proj-problem-solution"
+            style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
+            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
+              Many hackathon teams fail due to unclear planning, poor time management, and confusion during the critical first few hours.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Developed an AI copilot that instantly generates structured roadmaps, workflows, tool stacks, and presentation guides.</p>
+          </div>
+          <p class="proj-desc">HackMate is an AI-powered hackathon copilot built to streamline project planning, workflows, AI prompts, and demo prep, turning raw ideas into hackathon-ready workflows within minutes.</p>
+
+          <div class="proj-achievements">
+            <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
+              Key Stats:</h4>
+            <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> 1,000+ active users from 10+ countries worldwide.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> 10+ open-source contributors collaborating on features.</li>
+              <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Instantly generates 24–48 hour rapid prototyping roadmaps.</li>
+            </ul>
+          </div>
+
+          <div class="proj-stack" style="margin-top: 1.5rem;">
+            <span class="stack-tag">Next.js</span><span class="stack-tag">OpenAI API</span>
+            <span class="stack-tag">TailwindCSS</span><span class="stack-tag">Node.js</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://hackmate.anandmahadev.in?utm_source=chatgpt.com" class="plink plink-live" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+            <a href="https://github.com/anandmahadev/HACK-MATE" class="plink plink-gh" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="proj-right"><span class="proj-idx">01</span></div>
+      </div>
+
+      <!-- CardioNerve - POSITION 02 -->
+      <div class="proj-card reveal">
+        <div class="proj-info">
+          <div class="proj-num">PROJECT — 02 // HIGHEST IMPACT</div>
           <h3 class="proj-title">CardioNerve</h3>
           <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
             <span class="stack-tag">Building since Jan 2025</span>
@@ -2434,13 +2605,13 @@
             </a>
           </div>
         </div>
-        <div class="proj-right"><span class="proj-idx">01</span></div>
+        <div class="proj-right"><span class="proj-idx">02</span></div>
       </div>
 
-      <!-- AgroNova - POSITION 02 -->
+      <!-- AgroNova - POSITION 03 -->
       <div class="proj-card reveal">
         <div class="proj-info">
-          <div class="proj-num">PROJECT — 02</div>
+          <div class="proj-num">PROJECT — 03</div>
           <h3 class="proj-title">AgroNova</h3>
           <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
             <span class="stack-tag">Built in 4 months</span>
@@ -2496,13 +2667,13 @@
             </a>
           </div>
         </div>
-        <div class="proj-right"><span class="proj-idx">02</span></div>
+        <div class="proj-right"><span class="proj-idx">03</span></div>
       </div>
 
-      <!-- DrugSecure - POSITION 03 -->
+      <!-- DrugSecure - POSITION 04 -->
       <div class="proj-card reveal">
         <div class="proj-info">
-          <div class="proj-num">PROJECT — 03</div>
+          <div class="proj-num">PROJECT — 04</div>
           <h3 class="proj-title">DrugSecure</h3>
           <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
             <span class="stack-tag">Built in 2 months</span>
@@ -2558,62 +2729,50 @@
             </a>
           </div>
         </div>
-        <div class="proj-right"><span class="proj-idx">03</span></div>
+        <div class="proj-right"><span class="proj-idx">04</span></div>
       </div>
 
-      <!-- HackBro - POSITION 04 -->
+      <!-- Study Aware Prompt Builder - POSITION 05 -->
       <div class="proj-card reveal">
         <div class="proj-info">
-          <div class="proj-num">PROJECT — 04</div>
-          <h3 class="proj-title">HackBro</h3>
-          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-            <span class="stack-tag">Built in 1.5 months</span>
-            <span class="stack-tag">Community</span>
+          <div class="proj-num">PROJECT — 05 // GSoC 2026</div>
+          <h3 class="proj-title">Study Aware Prompt Builder</h3>
+          <div class="proj-meta-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <span class="stack-tag">GSoC 2026</span>
+            <span class="stack-tag">RUXAILAB</span>
+            <span class="stack-tag">UX Research</span>
           </div>
           <div class="proj-problem-solution"
             style="margin-bottom: 1rem; border-left: 2px solid var(--green); padding-left: 1rem;">
             <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong style="color: var(--green);">Problem:</strong>
-              Early-year students struggle to navigate their first hackathons, lacking a clear roadmap from idea to
-              prototype.</p>
-            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Developed a
-              mentorship-driven resource platform providing guided roadmaps and execution toolkits.</p>
+              LLM prompts in UX research are inconsistent, unvalidated, and unreproducible — making research findings unreliable.</p>
+            <p style="font-size: 0.85rem;"><strong style="color: var(--green);">Solution:</strong> Built a reproducible LLM prompt framework with audit hashes, strict schema validation, and a CLI — enabling traceable, replicable UX research workflows.</p>
           </div>
-          <p class="proj-desc">A resource-first platform designed to help 1st and 2nd-year students bridge the gap
-            between brainstorming an idea and executing a full hackathon build.</p>
+          <p class="proj-desc">A structured prompt engineering framework built for Google Summer of Code 2026 @ RUXAILAB. Enforces reproducibility in AI-assisted UX research through deterministic prompt versioning, audit trail hashing, and CLI-based validation pipelines.</p>
 
           <div class="proj-achievements">
             <h4 style="color: var(--green); font-family: var(--font-mono); font-size: 0.8rem; margin: 1rem 0 0.5rem;">
-              Key Stats:</h4>
+              Technical Highlights:</h4>
             <ul style="color: var(--gray); font-size: 0.85rem; list-style: none; padding-left: 0;">
               <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
-                  style="position: absolute; left: 0; color: var(--green);">▹</span> Guided 30+ freshman teams through
-                their first hackathon lifecycle.</li>
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Deterministic audit hashes for full prompt reproducibility.</li>
               <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
-                  style="position: absolute; left: 0; color: var(--green);">▹</span> Curated 5+ comprehensive roadmap
-                modules for AI & Web domains.</li>
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Strict JSON schema validation with CLI tooling.</li>
               <li style="margin-bottom: 0.4rem; padding-left: 1.2rem; position: relative;"><span
-                  style="position: absolute; left: 0; color: var(--green);">▹</span> Adopted as a recommended resource
-                for college tech orientation.</li>
+                  style="position: absolute; left: 0; color: var(--green);">▹</span> Complete POC built — selected for GSoC 2026 program.</li>
             </ul>
           </div>
 
           <div class="proj-stack" style="margin-top: 1.5rem;">
-            <span class="stack-tag">Node.js</span><span class="stack-tag">JWT</span>
-            <span class="stack-tag">MongoDB</span><span class="stack-tag">WebSockets</span>
+            <span class="stack-tag">Python</span><span class="stack-tag">CLI</span>
+            <span class="stack-tag">JSON Schema</span><span class="stack-tag">LLM APIs</span>
           </div>
           <div class="proj-links">
-            <a href="https://hackbro.vercel.app" class="plink plink-live" target="_blank">
+            <a href="https://github.com/anandmahadev/study-aware-prompt-builder" class="plink plink-gh" target="_blank"
+              title="View Study Aware Prompt Builder on GitHub">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-              Live Demo
-            </a>
-            <a href="https://github.com/anandmahadev/HACK-MATE" class="plink plink-gh" target="_blank">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
+                stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="GitHub">
+                <title>GitHub</title>
                 <path
                   d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
               </svg>
@@ -2621,9 +2780,58 @@
             </a>
           </div>
         </div>
-        <div class="proj-right"><span class="proj-idx">04</span></div>
+        <div class="proj-right"><span class="proj-idx">05</span></div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE CONTRIBUTIONS -->
+  <section id="contributions" class="sec">
+    <div class="reveal">
+      <p class="sec-lbl">// <span class="num-label">01.5</span> — Community</p>
+      <h2 class="sec-title">Open Source</h2>
+      <p class="sec-sub">Active engineering contributions to open-source and ecosystem codebases this year.</p>
+    </div>
+
+    <div class="contrib-grid reveal">
+      <!-- Contribution Card 1 -->
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <span class="contrib-repo">utilForever/cp-editorial-frontend</span>
+          <span class="contrib-status">
+            <span class="contrib-dot"></span>
+            Merged
+          </span>
+        </div>
+        <h3 class="contrib-title">Clickable Brand Header Link</h3>
+        <p class="contrib-desc">Refactored the core application brand component in the main header to act as an active, clickable home link, streamlining user navigation across CP Contest Editorials (editorial.coduck.io).</p>
+        <div class="contrib-footer">
+          <span>PR #54 (size/XS)</span>
+          <a href="https://github.com/utilForever/cp-editorial-frontend/pull/54" class="contrib-pr-link" target="_blank">
+            View Pull Request ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Contribution Card 2 -->
+      <div class="contrib-card">
+        <div class="contrib-header">
+          <span class="contrib-repo">utilForever/cp-editorial-frontend</span>
+          <span class="contrib-status">
+            <span class="contrib-dot"></span>
+            Merged
+          </span>
+        </div>
+        <h3 class="contrib-title">Colored Search Result Headers</h3>
+        <p class="contrib-desc">Designed and implemented high-visibility colored headers on search result cards, establishing strong visual hierarchy and categorizations for CP editorials.</p>
+        <div class="contrib-footer">
+          <span>PR #49 (size/M)</span>
+          <a href="https://github.com/utilForever/cp-editorial-frontend/pull/49" class="contrib-pr-link" target="_blank">
+            View Pull Request ↗
+          </a>
+        </div>
+      </div>
     </div>
   </section>
   <!-- EXPERIENCE -->
